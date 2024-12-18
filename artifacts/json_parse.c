@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     len = read(STDIN_FILENO, buf, 1023);
     buf[len] = '\0';
     json = (json_char*)buf;
-    
+
     value = json_parse(json, len);
     if (value == NULL) {
         printf("FAILED to parse json\n");
