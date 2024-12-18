@@ -36,7 +36,7 @@ mkdir corpus
 cp ../tests/*.json corpus
 ```
 
-5. Проганяем скомпилированный тест с корпусом
+5. Прогоняем скомпилированный тест с корпусом
 ``` bash
 for filename in corpus/*; do ./json_parse < $filename; done
 ```
