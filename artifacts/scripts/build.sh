@@ -23,13 +23,13 @@ make clean
 
 cd /home/fuzzer/json-parser-1.1.0/fuzz
 # afl++ build
-afl-clang-lto json_fuzz.c -I.. -L../afl_build/ -ljsonparser -lm -o afl_fuzz
+afl-clang-lto json_parse.c -I.. -L../afl_build/ -ljsonparser -lm -o afl_fuzz
 
 # asan build
-afl-clang-lto json_fuzz.c -fsanitize=address -I.. -L../asan_build/ -ljsonparser -lm -o asan_fuzz
+afl-clang-lto json_parse.c -fsanitize=address -I.. -L../asan_build/ -ljsonparser -lm -o asan_fuzz
 
 # ubsan build
-afl-clang-lto json_fuzz.c -fsanitize=undefined -I.. -L../ubsan_build/ -ljsonparser -lm -o ubsan_fuzz
+afl-clang-lto json_parse.c -fsanitize=undefined -I.. -L../ubsan_build/ -ljsonparser -lm -o ubsan_fuzz
 
 # ubsan build
-clang json_fuzz.c -I.. -L../cov_build/ -ljsonparser -lm -o cov_fuzz
+clang json_parse.c -I.. -L../cov_build/ -ljsonparser -lm -o cov_fuzz
