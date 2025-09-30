@@ -1,5 +1,6 @@
 #! /bin/bash
 cd /home/fuzzer/json-parser-1.1.0
+make clean
 
 # afl++ build
 CC=afl-clang-lto ./configure && make
